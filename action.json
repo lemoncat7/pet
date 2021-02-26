@@ -1,0 +1,20 @@
+{
+	"route"	: "pet_30",
+	"initImage" : "shime1.png",
+	"action1" : {
+		"name" : "flash",
+		"time" : "100",
+		"action" : ["shime43.png","shime44.png","shime46.png","shime46.png","shime46.png","shime46.png","shime45.png","shime44.png","shime43.png","shime42.png"]
+		},
+	"action2" : {
+		"name" : "walk",
+		"time" : "500",
+		"move" : ["-10","0"],
+		"action" : ["shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png"]
+		},
+	"action3" : {
+		"name" : "click",
+		"time" : "500",
+		"action" : ["shime6.png","shime7.png","shime8.png","shime9.png","shime10.png","shime9.png","shime10.png","shime9.png","shime10.png","shime11.png"]
+		}
+}
