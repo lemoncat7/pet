@@ -1,7 +1,7 @@
 {
 	"route"	: ".",
 	"initImage" : "shime1.png",
-	"radomTime" : "1000",
+	"radomTime" : "10000",
 	"action1" : {
 		"name" : "flash",
 		"time" : "100",

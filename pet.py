@@ -172,7 +172,7 @@ class DesktopPet(QWidget):
         self.edit_timer.timeout.connect(self.editMove)
         self.edit_timer.start(50)
         self.InitImage()
-        self.writeText("你好呀 召唤师",0,1000)
+        self.writeText("你好呀 召唤师",0,2000)
         # 每隔一段时间检测配置文件
         self.monitor_json=QTimer()
         self.monitor_json.timeout.connect(self.monitorJson)
@@ -446,7 +446,7 @@ class DesktopPet(QWidget):
         #print(pet_geo.width(),pet_geo.height())
         #print(pet_geo.x(),pet_geo.y(), xPoint,yPoint)
         #print(x,y,screen_geo.width() - self.image_width,screen_geo.height() - self.image_height )
-        if x + pet_geo.width() - self.image_width < 0 or y + pet_geo.height() - self.image_height < 0 or x >= screen_geo.width() - pet_geo.width() or y >= screen_geo.height() - pet_geo.height():
+        if self.x() < 0 or self.y() < 0 or x + self.width() >= screen_geo.width() or y + self.height() >= screen_geo.height():
             return False
         self.move(x,y)
         return True
