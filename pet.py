@@ -10,9 +10,9 @@ import os
 import sys
 import random
 import time
-
+import hashlib
 import requests
-from notifypy import Notify
+#from notifypy import Notify
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
@@ -42,6 +42,28 @@ class LoginTic():
         url="http://api.qingyunke.com/api.php?key=free&appid=0&msg="
         response = requests.post(url=url+text)
         return response.text
+    
+    def OLAMI(self,text):
+        t = time.time()
+        times=str(int(round(t*1000)))
+        tt = "1614526973243"
+        secret='057845f72ef54a96a69ca62b786328cd'
+        key='d94d8113c2274e0896612d5bb16b7f80'
+        mdKey=secret+'api=nli'+"appkey="+key+"timestamp="+times+secret
+        log=hashlib.md5(mdKey.encode())
+        
+        url="https://cn.olami.ai/cloudservice/api"
+        data={
+            "appkey":"d94d8113c2274e0896612d5bb16b7f80",
+            "api":"nli",
+            "timestamp":times,
+            "sign":log.hexdigest(),
+            "cusid":'pickaqiu',
+            "rq" : json.dumps({"data_type":"stt","data":{"input_type":"1","text":text}})
+        }
+        r = requests.post(url=url,data=data)
+        return r.text
+        
 
 class MyTextEdit(QWidget):
     def __init__(self,parent=None,**kwargs):
@@ -273,8 +295,8 @@ class DesktopPet(QWidget):
          self.dilag_timer.stop()
          text, ok = QInputDialog.getText(self, "皮卡丘","请输入对话:",QLineEdit.Normal)
          if ok:
-             s = self.tuLing.qingYue(text)
-             t = json.loads(s)["content"]
+             s = self.tuLing.OLAMI(text)
+             t = json.loads(s)["data"]["nli"][0]["desc_obj"]["result"]
              #print(t)
              self.writeText(t,3)
             
