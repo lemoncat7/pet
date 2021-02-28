@@ -1,20 +1,64 @@
 {
-	"route"	: "pet_30",
+	"route"	: ".",
 	"initImage" : "shime1.png",
+	"radomTime" : "1000",
 	"action1" : {
 		"name" : "flash",
 		"time" : "100",
-		"action" : ["shime43.png","shime44.png","shime46.png","shime46.png","shime46.png","shime46.png","shime45.png","shime44.png","shime43.png","shime42.png"]
+		"action" : ["shime43.png","shime44.png","shime46.png","shime46.png","shime46.png","shime46.png","shime45.png","shime44.png","shime43.png","shime42.png"],
+		"text" : "十万伏特"
 		},
-	"action2" : {
+	"actio2" : {
 		"name" : "walk",
-		"time" : "500",
+		"time" : "200",
 		"move" : ["-10","0"],
+		"text" : "啦啦啦",
 		"action" : ["shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png","shime2.png","shime3.png","shime1.png"]
 		},
 	"action3" : {
-		"name" : "click",
+		"name" : "swim",
 		"time" : "500",
-		"action" : ["shime6.png","shime7.png","shime8.png","shime9.png","shime10.png","shime9.png","shime10.png","shime9.png","shime10.png","shime11.png"]
+		"text" : "我爱洗澡",
+		"action" : ["shime15.png","shime16.png","shime28.png","shime17.png","shime28.png","shime17.png","shime28.png","shime17.png","shime28.png","shime17.png","shime28.png","shime17.png","shime16.png","shime15.png","shime1.png"]
+	},
+	"action4" : {
+		"name" : "eat",
+		"time" : "500",
+		"text" : "真香啊",
+		"action" : ["shime30.png","shime31.png","shime32.png","shime33.png","shime32.png","shime33.png","shime32.png","shime33.png","shime32.png","shime33.png","shime32.png","shime33.png","shime32.png","shime33.png","shime32.png","shime31.png","shime30.png","shime15.png","shime1.png"]
+	},
+	"action5" : {
+		"name" : "ball",
+		"time" : "300",
+		"text" : "召唤术",
+		"action" : ["shime38.png","shime39.png","shime40.png","shime41.png","shime40.png","shime39.png","shime38.png","shime1.png"]
+	},
+	"actio6" : {
+		"name" : "fly",
+		"time" : "100",
+		"move" : ["0","-20"],
+		"text" : "起飞~~",
+		"action" : ["shime4.png","shime4.png","shime4.png","shime4.png","shime4.png","shime4.png","shime4.png","shime4.png","shime4.png","shime4.png","shime4.png","shime4.png","shime4.png","shime4.png"],
+		"down" : {
+			"name" : "flydown",
+			"time" : "50",
+			"move" : ["0","10"],
+			"text" : "吧唧",
+			"action" : ["shime11.png"]
 		}
+	},
+	"click" : {
+		"time" : "100",
+		"clickUp" : ["shime6.png"],
+		"clickLeft" : ["shime10.png"],
+		"clickRight" : ["shime9.png"],
+		"text" : "放手呐 放手啦",
+		"clickDown" : {
+			"time" : "800",
+			"text" : "好痛哦~",
+			"action" : ["shime18.png"],
+			"floor" : ["shime19.png","shime20.png","shime21.png","shime20.png","shime21.png","shime15.png","shime1.png"],
+			"move" : ["0","10"]
+		}
+	}
 }
